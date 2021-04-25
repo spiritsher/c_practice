@@ -1,5 +1,21 @@
 /* calculate the average weight of seal-elephant
+Roadmap:
+1. copy elephant_data to "data.txt" file;
+2. save the file in the save folder with src.
+3. compiling src: gcc average_seal.cpp gcc -o average_seal.out -g
+4. run the binary file with argv: ./average_seal.out -data.txt
 
+result:
+print the input array.
+calculate the average with solution 1#,
+counter the total index, counter the sum weight;
+calculate the average with solution 2#,
+average = sum/counter
+
+solution 1#: to avoid overflow for int.
+use following solution to calculate average:  
+average = average+(input_arr[i]-average)/++counter
+calculate average for every input elements.
 
 sjw.spirit@gmail.com
 23.04.2021 */
