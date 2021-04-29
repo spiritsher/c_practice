@@ -3,9 +3,9 @@
 #include <time.h>
 
 //不同的平台下引入不同的头文件
-#if _WIN32  //识别windows平台
+#if _WIN32 //识别windows平台
 #include <windows.h>
-#elif __linux__  //识别linux平台
+#elif __linux__ //识别linux平台
 #include <unistd.h>
 #endif
 
@@ -14,31 +14,35 @@
 
 // note female range is 880-2000 ls.
 
-#define RANGE       4400
-#define POPULATION  1000
-#define WT_OVER     rand()% RANGE
-#define WT          WT_OVER+MIN_SEAL_WT_M
-#define FILL        for (i=0; i<POPULATION; i++) \
-                    data[i]=WT
+#define RANGE 4400
+#define POPULATION 1000
+#define WT_OVER rand() % RANGE
+#define WT WT_OVER + MIN_SEAL_WT_M
+#define FILL                         \
+    for (i = 0; i < POPULATION; i++) \
+    data[i] = WT
 
 void print_data(int d[], int size)
 {
     int i;
-    for (i=0; i<size; i++){
+    for (i = 0; i < size; i++)
+    {
         printf("%d\t", d[i]);
-        if((i+1)%10 ==0){
+        if ((i + 1) % 10 == 0)
+        {
             printf("\n");
         }
     }
 }
 
-int main() {
-    //不同的平台下调用不同的函数
-    #if _WIN32  //识别windows平台
+int main()
+{
+//不同的平台下调用不同的函数
+#if _WIN32 //识别windows平台
     Sleep(5000);
-    #elif __linux__  //识别linux平台
+#elif __linux__ //识别linux平台
     sleep(5);
-    #endif
+#endif
 
     int i;
     int data[POPULATION];
