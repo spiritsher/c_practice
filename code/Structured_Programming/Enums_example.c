@@ -2,6 +2,14 @@
 
 enum week{ Mon = 1, Tues, Wed, Thurs, Fri, Sat, Sun };
 
+typedef enum choices
+{
+    left,
+    left_center = 2,
+    right_center,
+    right = 5
+} choices;
+
 typedef enum week day;
 
 void print_day(day d)
@@ -29,5 +37,6 @@ int main()
     scanf("%d", &d);
     print_day(d);
     print_day(next_day(d));
+    // putc(choices.right_center);
     return 0;
 }
